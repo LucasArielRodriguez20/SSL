@@ -64,4 +64,43 @@ Con el siguiente comando pasamos del hello4.s a hello4.o, con el cual creamos el
     gcc hello4.s -c -o hello4.o
     
 Vinculacion:
+Tratamos de vincular hello4.o con su ejecutable hello4.exe pero ocurre un error por la funcion prontf
+
+![image](https://user-images.githubusercontent.com/94145002/172457141-369fd923-bdf2-4c4f-a5c9-e064f0221fa6.png)
+
+Creamos un hello5.c con el problema solucionado y probamos nuevamente con el comando 
+
+    gcc hello5.c -o hello5.
+    
+ Al ejecutar el hello5.exe nos retorna la siguiente salida:
+ 
+ ![image](https://user-images.githubusercontent.com/94145002/172457700-018009ed-8685-443c-99fe-e3d4af447196.png)
+ 
+Correccion de bug:
+
+como observamos ese no es el valor esperado de nuestro helloN.c, ya que esperabamos el valor de i, por lo tanto creamos un hello6.c con las correciones finalez y lo volvemos a ejecutar.
+
+    int printf(const char * restrict s, ...);
+    int main(void){
+    int i=42;
+    printf("La respuesta es %d\n",i);
+    }
+
+![image](https://user-images.githubusercontent.com/94145002/172458087-546c6ebc-5c33-457a-abd2-1179b7d5d96a.png)
+
+Remocion de prototipos:
+
+Creamos un nuevos hello, en este caso hello7.c, con el siguiente codigo 
+
+    int main(void){
+    int i=42;
+    printf("La respuesta es %d\n", i);
+    }
+
+![image](https://user-images.githubusercontent.com/94145002/172458770-bf8759f0-d5fe-4711-8b7f-47b70c3988fb.png)
+
+Como observamos el codigo vincula crea el hello7.exe y ademas funciona como es esperado.Pero a diferencia de otros hello en este caso no declaramos la funcion printf.
+
+La fucnion printf es una funcion tan conocida que c nos permite utilizarla sin declararla 
+
 
