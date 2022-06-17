@@ -99,8 +99,20 @@ Creamos un nuevos hello, en este caso hello7.c, con el siguiente codigo
 
 ![image](https://user-images.githubusercontent.com/94145002/172458770-bf8759f0-d5fe-4711-8b7f-47b70c3988fb.png)
 
-Como observamos el codigo vincula crea el hello7.exe y ademas funciona como es esperado.Pero a diferencia de otros hello en este caso no declaramos la funcion printf.
+Como observamos el codigo vincula crea el hello7.exe y ademas funciona como es esperado.El codigo funciona sin la declaracion de printf porque printf se encuentra en el built in , ya que printf es una funcion con un trato especial en c , se puede utilizar sin la necesidad de crear el prototipo de la funcion.
 
-La fucnion printf es una funcion tan conocida que c nos permite utilizarla sin declararla 
+Compilacion separada : Contratos y Modulos
+
+Con el siguiente comando creamos el ejecutable de hello8.c con la utilizacion de la libreria creada por nosotros studio.c
+![image](https://user-images.githubusercontent.com/94145002/174361037-09e7c3d7-572a-428b-84da-08cfd0fa20e8.png)
+
+En la siguiente imagen mostramos como utilizando la funcion prontf con mas parametros que la declaracion de studio.c , al ejecutarlo solo los ignora.
+
+![image](https://user-images.githubusercontent.com/94145002/174374336-0febe9f5-07d3-47a1-9371-8048acdd55e9.png)
+
+Cuando incluimos el contrato tanto en el proovedor como en el cliente , nos garantiza de no tener el problema de no saber como va a reaccionar el codigo , ya que especificamos de donde tiene que sacar nuestras funciones.
+
+
+
 
 
